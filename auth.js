@@ -36,6 +36,7 @@
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             alert(`Welcome back, ${userCredential.user.email}`);
             console.log(userCredential.user);
+            window.location.href = 'dashboard.html';
         } catch (error) {
             alert(error.message);
             console.error(error);
@@ -103,3 +104,5 @@
             console.error(error);
         }
     });
+
+    
