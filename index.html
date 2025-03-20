@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TimeMaster - Smart Time Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         :root {
             --primary: #2563eb;
@@ -21,51 +25,9 @@
             font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
-        /* Navbar Styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-item {
+        body {
+            background: var(--light);
             color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-        }
-
-        .nav-item:hover {
-            background: #f1f5f9;
-            color: var(--primary);
         }
 
         .profile-circle {
@@ -242,7 +204,14 @@
             <a href="#" class="nav-item">Home</a>
             <a href="#" class="nav-item">Features</a>
             <a href="#" class="nav-item">About</a>
-            <div class="profile-circle">JD</div>
+            <!-- Profile Section -->
+            <div class="profile-container">
+                <div class="profile-circle" onclick="toggleDropdown()">JD</div>
+                <div id="dropdownMenu" class="dropdown hidden">
+                    <a href="#" class="dropdown-item">Profile</a>
+                    <a href="#" class="dropdown-item">Logout</a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -316,5 +285,6 @@
         });
     </script>
     <script type="module" src="./index.js" ></script>
+    <script type="module" src="./navbar.js" ></script>
 </body>
 </html>
